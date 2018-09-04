@@ -1,0 +1,73 @@
+In this document, the structure of the papyrus part of OSA2 will be outlined
+
+current version: 1.0a 25-8-18
+
+Intentions:
+-Keep papyrus part lightweight, as actionscript or c++ modules are much faster
+-keep everything documented
+-Use JsonUtil to save data
+-The here stated script data is contains only method stubs
+
+
+Files:
+OSA2Main - contains main functions, like startup, event registration, version checks
+OSA2Global - contains global functions and variables
+OSA2UI - contains the communication to the UI
+OSA2Animation - contains the Animation functions
+OSA2Version - contains version stuff
+
+OSA2Version:
+- This file contains version controll functions to register updates or new installations of OSA2
+Scripname OSA2Version
+
+float function GetScriptVersion()
+-returns a hardcoded version number which should change with every release
+
+float function GetSavedScriptVersion()
+-gets the saved version number from the jsonUtil or 0 if none is present
+
+function SetSavedScriptVersion()
+-updates the saved script version number to the GetScriptVersion value
+
+OSA2Animation:
+- This file contains functions to carry out the actual animations
+bool function PlaySoloAnimation(actor akActor, idle animation)
+- Utilizes the PlayIdle function
+
+bool function PlayPairedAnimation(actor akActor1, actor akActor2, idle animation)
+- Utilizes the PlayIdleWithTarget function
+
+OSA2UI:
+-This files contains the communication to the swf UI 
+Scriptname OSA2UI extends SKI_WidgetBase
+- extend SkyUI widget base
+
+String function GetSWFSource()
+-returns path to the swf
+
+function CallUIFunction(string function, int UIID)
+-use UI.Invoke("HUD Menu",_root.WidgetCintainer."+UIID+".widget"+function)
+
+function SendUIInt(string function, int UIID, int i)
+-Sends the int i to the given UI function
+
+function SendUIString(string function, int UIID, string s)
+-Sends the string s to the given UI function
+
+function SendUIStringArray(string function, int UIID, string[] stringArray)
+-Sends the stringArray to the given UI function
+
+int function GetUIInt(string path, int UIID)
+-returns the UI int at the given path
+
+string function GetUIString(string path, int UIID)
+-returns the UI string from the given path
+
+string[] function GetUIStringArray(string path, int UIID)
+-returns the UI stringArray from the given path
+
+OSA2Global:
+- This script holds all the global functions and variables of OSA2
+
+OSA2Main:
+This script holds the main functionality of OSA2 like version controll, startup functions and event registration

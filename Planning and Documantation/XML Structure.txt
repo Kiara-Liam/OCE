@@ -1,0 +1,63 @@
+This Document outlines the xml structure and parameters which should accompany an animation set for OSA2
+
+current version: 1.0a 25-8-18
+
+Intentions:
+a xml document should accompany any external animation set used by OSA2. This XML has to follow rules, so that it can be used by OSA2 to get 
+the neccessary informations to handle the animations and act apropiatly. This means, that the xml needs to contain informations about the 
+pack itself as well as for every single animation. Since OSA2 has a tag system for script access, each animation should also be tagged.
+For a higher reusability of existing mods and easier integration of already existing and widely used mods, the current tag system contains 
+mainly the SL tags, or at least compatibilty methods to read SL and change them internally to OSA2 tags. Where a change to SL tags is intended, 
+it will be noted in the tags document.
+XMLs go to Data/OSA2/
+
+NOTE:
+-> Aimation ID <ID>START</ID> is a hardcoded Animation in OSA2 and shouldn't be used by other animations.
+-> Aimation ID <ID>END</ID> is a hardcoded Animation in OSA2 and shouldn't be used by other animations.
+-> Use <ID>START</ID> in the <Pre>...</Pre> clause if your animation should be accessible from start, if animation graph is started at root
+-> Use <Post id=END></Post> if the current OSA2 stage should exit automaticly after this animation 
+-> if an animation is a paired animation, add 2 actor clauses and keep in mind to set creature tags accordingly (male and female are recognized tags)
+
+Preliminary XML structure:
+<OSA2_Animation_Pack>									# Main XML clause
+	<Name>...</Name>									# Name of the package
+	<Author>...</Author>								# Author of the Package
+	<Version>...</Version>								# Version of this Package, if multiple packages with the same name are found, the higher version is used
+	<Date>..-..-....</Date>								# Date of package release
+	<Description>...</Description>						# Package description
+	<PackTag>											# tags which should be used for every animation in this pack
+		<Tag type="">...</Tag>							# Syntax for a tag. See tag document for more details. Tags with empty type will be ignored
+		...
+	</PackTag>
+	
+	<Animation>											# Clause for a single animation
+		<Name>...</Name>								# Name of the animation, as displayed in the HUD
+		<ID>...</ID>									# Internal OSA2 id of the Animation. Needs to be unique
+		<Type>...</Type>								# Currently only "transition" or "animation". transistions won't appear in HUD and are auto played
+		<Path>...</Path>								# Path to the animation as seen from Data folder
+		<Pre>											# Which animations predecess this one in the animation tree
+			<ID>...</ID>								# ID of the predeccors animation. Multiple ID's are possible
+			...
+		</Pre>
+		<Post id = ...></Post>							# use this clause, if another animation should be played directly after this animation 
+		<Length>...</Length>							# duration in seconds of this animation assuming 30FPS
+		<Repeat>...</Repeat>							# Bool 0 or 1 if this animation should auto repeat. If repeat = 1 the Post clause is ignored
+		<Speed>											# populate if there are other speed for this animations. This keeps the UI cleaner and the Animation graph lighter
+			<Increase id=...></Increase>
+			<Decrease id=...></Decrease>	
+		</Speed>
+		<AnimTag>										# Tags which are aplicable for this animation. If all animations in this pack share a tag, it belongs into <PackTag>
+			<Tag type="">...</Tag>						# Syntax for a tag. See tag document for more details. Tags with empty type will be ignored
+			...
+		</AnimTag>
+		<Actor num=0>									# can be used to restrict animations to certain actor setups
+			<Tag type="Creature">...</Tag>				# only creature tags will be recognized
+		</Actor>
+		<Position>										# Position offset in game units
+			<X=.../>
+			<Y=.../>
+			<Z=.../>
+		</Position>
+		<gfx =.../>										# path to the .swf that will be displayed n the UI
+	</Animation>
+</OSA2_Animation_Pack>

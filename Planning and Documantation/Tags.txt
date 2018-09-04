@@ -1,0 +1,184 @@
+This document contains all the currently recognized tags by OSA2 and their type
+OSA2 will give modders the oportunity to filter for tags, or exclude some animations based on tags
+Also, some animations will only be available if the proper actor types are used in OSA2
+
+current version: 1.0a 25-8-18
+
+Anatomy:
+	Anus
+	Boobs
+	Breast
+	Dick
+	Feet
+	Hands
+	Mouth
+	Oral
+	Penis
+	Pussy
+	Vaginal
+	Vagina
+	Wrists
+	
+Creature:
+	Ashhopper
+	Atronach
+	Bear
+	Big Spider
+	Boar
+	Canine
+	Cat
+	Chaurus
+	Chaurusflyer
+	Chicken
+	Cow
+	Creature
+	Daedra
+	Deer
+	Dog
+	Dragon
+	Draugr
+	DwarvenCenturion
+	Falmer
+	Gargoyle
+	Giant
+	Goat
+	Hagraven
+	Horker
+	Horse
+	Mammoth
+	Netch
+	Rabbit
+	Riekling
+	Seeker
+	Seeking
+	Skeever
+	Spider
+	Spriggan
+	Troll
+	Vampire
+	Vampire Lord
+	Werewolf
+	Wispmother
+	Wolf
+	Male
+	Female
+	Player
+	
+Cum:
+	AirCum
+	AnalCreampie
+	AnalCum
+	ChestCum
+	Creampie
+	CumInMouth
+	EatingCum
+	Facial
+	FeetCum
+	HandsCum
+	VaginalCum
+	
+Furniture:
+	AnimObject
+	Beds
+	BedOnly
+	Chair
+	DoubleBed
+	Furniture
+	SexToy
+	Throne
+	Unicorn
+	
+Orientation:
+	F
+	FF
+	FFM
+	FM
+	Futa
+	Gay
+	Lesbian
+	M
+	MF
+	MFF
+	MFFFF
+	MM
+	MMF
+	MMMF
+	Straight
+	
+Position:
+	69
+	Behind
+	Cowgirl
+	Doggy
+	Doggystyle
+	Missionary
+	OnBack
+	Powerbomb
+	RCowgirl
+	Reverse
+	ReverseCowgirl
+	Spooning
+	Tribadism
+	Tricycle
+	
+Theme:
+	3P
+	Acrobatic
+	Aggressive
+	AggressiveDefault
+	Anal
+	Binding
+	Blowjob
+	Boobjob
+	Breastfeeding
+	Cuddling
+	Cunnilingus
+	Custom
+	Dark Investigations
+	Default
+	Dirty
+	DomSub
+	Facing
+	Feeding
+	FemDom
+	Fetish
+	Fisting
+	Fiveway
+	Fondling
+	Footjob
+	Forced
+	Foreplay
+	Funny
+	Gangbang
+	Groping
+	groupsex
+	Handjob
+	Holding
+	Hugging
+	Impaled
+	Kissing
+	Knees
+	Kneeling
+	Laying
+	LeadIn
+	Licking
+	Loving
+	Lying
+	Masturbation
+	Necro
+	Orgy
+	Petting
+	Prone
+	Riding
+	Rimming
+	Rough
+	Sex
+	Sideways
+	Sitting
+	Sleeping
+	Snuff
+	Solo
+	Spanking
+	Standing
+	Threesome
+	Threeway
