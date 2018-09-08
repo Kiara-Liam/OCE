@@ -1,0 +1,9 @@
+current version: 1.0b 9-9-18
+
+This document outlines the Filenameing standard in OCE
+
+Every file starts with a _o2_ prefix
+
+Papyrus script files end with a '_script' suffix
+
+For every papyrus file, the Source file has to be delivered with the finished mod

@@ -1,0 +1,13 @@
+current version: 1.0b 9-9-18
+
+This file outlines the Code style used in OCE
+
+Functions start with a small letter: 'functionName'
+
+Objects start with a capital letter: 'FooBar'
+
+In Papyrus, object types start with a capital letter: 'String'
+
+In Papyrus, conditions and internal keywords start with a capital letter: 'Function','If','EndIf', 'Event', 'EndEvent'...
+
+In the Creation Kit, everything has the _o2_ prefix

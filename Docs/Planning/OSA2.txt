@@ -1,0 +1,96 @@
+In this document, the structure of the papyrus part of OSA2 will be outlined
+
+current version: 1.0b 9-9-18
+
+Intentions:
+-Keep papyrus part lightweight, as actionscript or c++ modules are much faster
+-keep everything documented
+-Use JsonUtil to save data
+-The here stated script data is contains only method stubs
+
+Files:
+_o2_Main_script - contains main functions, like startup, event registration, version checks
+_o2_Global_script - contains global functions and variables
+_o2_UI_script - contains the communication to the UI
+_o2_Animation_script - contains the Animation functions
+_o2_Version_script - contains version stuff
+_o2_Controll_script - contains keybind and keypress logic
+
+_o2_Version_script:
+- This file contains version controll functions to register updates or new installations of OSA2
+Scripname _o2_Version_script
+
+Float function getScriptVersionFloat()
+-returns a hardcoded version number which should change with every release
+
+String Function getScriptVersionString()
+-returns the hardcoded script version as string. This should change every release
+
+_o2_Animation_script:
+- This file contains functions to carry out the actual animations
+
+Bool Function playSoloAnimation(Actor AkActor, Idle Animation)
+- Utilizes the PlayIdle function
+
+Bool Function playPairedAnimation(Actor AkActor1, Actor AkActor2, Idle Animation)
+- Utilizes the PlayIdleWithTarget function
+
+_o2_UI_script: Questscript for OSA2UI
+-This files contains the communication to the swf UI 
+
+Scriptname _o2_UI_script extends SKI_WidgetBase
+- extend SkyUI widget base
+
+String Function getWidgetSource()
+-returns path to the swf
+
+Function callUIFunction(String Function, Int UIID)
+-use UI.Invoke("HUD Menu",_root.WidgetCintainer."+UIID+".widget"+function)
+
+Function sendUIInt(String function, Int UIID, Int i)
+-Sends the int i to the given UI function
+
+Function sendUIString(String function, Int UIID, String s)
+-Sends the string s to the given UI function
+
+Function sendUIStringArray(String function, Int UIID, String[] stringArray)
+-Sends the stringArray to the given UI function
+
+Int Function getUIInt(String path, Int UIID)
+-returns the UI int at the given path
+
+String Function getUIString(String path, Int UIID)
+-returns the UI string from the given path
+
+String[] Function getUIStringArray(String path, Int UIID)
+-returns the UI stringArray from the given path
+
+_o2_Controll_script: Questscript for the OSA2Controll Quest
+Scriptname _o2_Controll_script extends Quest
+-Contains controlls logic, like registering keypresses and setting of keyboard layout
+
+Function resetControls()
+-Resets the controls for OSA2
+
+Function updateControls()
+-Updates the registered controlls and events for OSA2Controll_script
+
+Int[] Function setStandardKeys()
+-Returns the standard keyboard layout for OSA2
+
+Function registerAllKeys()
+-registers all set keys in the game
+
+Event onBindKey(Int keyIndex, Float newKey)
+-Rebinds the key at the given index to the new key
+
+Event onKeyDown(Int KeyPress)
+-fires if a key is pressed
+
+
+
+_o2_Global_script:
+- This script holds all the global functions and variables of OSA2
+
+_o2_Main_script:
+This script holds the main functionality of OSA2 like version control, startup functions and event registration
